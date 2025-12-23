@@ -24,14 +24,17 @@ totalEstados = df['SG_UF_ESCOLA'].nunique()
 
 print('-----')
 escolas_por_uf = (
-    df.groupby('SG_UF_ESCOLA')['CO_ESCOLA_EDUCACENSO']
+   df.groupby('SG_UF_ESCOLA')['CO_ESCOLA_EDUCACENSO']
       .nunique()
 )
 
 print(escolas_por_uf)
-plt.(escolas_por_uf.index, escolas_por_uf.values, color="red")
-plt.title('Número de Escolas Únicas por UF')
+plt.bar(escolas_por_uf.index, escolas_por_uf.values, color="red")
+plt.title('Número de Escolas por UF')
 plt.xlabel('Sigla da UF (Unidade Federativa)')
 plt.ylabel('Número de Escolas')
 plt.xticks(rotation=45, ha='right')
 plt.show()
+
+
+
