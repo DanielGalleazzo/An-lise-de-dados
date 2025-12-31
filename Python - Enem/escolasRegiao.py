@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 pd.set_option('display.max_columns', 100)
 #df = pd.read_csv('MICRODADOS_ENEM_ESCOLA.csv') da erro por conta da tabela
 df = pd.read_csv(
-    'MICRODADOS_ENEM_ESCOLA.csv',
+    'Microdados_enem_modificado.csv',
     sep=';',
     encoding='latin1',
     low_memory=False
