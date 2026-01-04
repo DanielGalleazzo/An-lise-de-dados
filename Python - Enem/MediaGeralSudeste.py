@@ -36,14 +36,14 @@ sudeste = (
     mediaEscolaRJ,
     mediaEscolaES
 )
-estados = (sp,mg,rj,es)
+estadosSudeste = (sp,mg,rj,es)
 
 
 
 plt.title("Média do sudeste em 2015")
 plt.ylabel("Média")
 plt.xlabel("Estados")
-plt.bar(estados,sudeste, color = "grey")
+plt.bar(estadosSudeste,sudeste, color = "grey")
 plt.show()
 
 
