@@ -19,10 +19,28 @@ totalspGrupo3 = df[(df["SG_UF_ESCOLA"] == "SP" ) & (df["INSE"] == "Grupo 3")] ["
 totalspGrupo4 = df[(df["SG_UF_ESCOLA"] == "SP" ) & (df["INSE"] == "Grupo 4")] ["media"].mean()
 totalspGrupo5 = df[(df["SG_UF_ESCOLA"] == "SP" ) & (df["INSE"] == "Grupo 5")] ["media"].mean()
 totalspGrupo6 = df[(df["SG_UF_ESCOLA"] == "SP" ) & (df["INSE"] == "Grupo 6")] ["media"].mean()
+totalrjGrupo1 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 1")] ["media"].mean()
+totalrjGrupo2 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 2")] ["media"].mean()
+totalrjGrupo3 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 3")] ["media"].mean()
+totalrjGrupo4 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 4")] ["media"].mean()
+totalrjGrupo5 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 5")] ["media"].mean()
+totalrjGrupo6 = df[(df["SG_UF_ESCOLA"] == "RJ" ) & (df["INSE"] == "Grupo 6")] ["media"].mean()
 
-print(totalspGrupo1)
-print(totalspGrupo2)
-print(totalspGrupo3)
-print(totalspGrupo4)
-print(totalspGrupo5)
-print(totalspGrupo6)
+
+
+
+SaoPaulo = (( totalspGrupo1 +
+            totalspGrupo2 +
+            totalspGrupo3 +
+            totalspGrupo4 +
+            totalspGrupo5 +
+            totalspGrupo6 ) /6 )
+RioJaneiro = ((totalrjGrupo1+
+               totalrjGrupo2+
+               totalrjGrupo3+
+               totalrjGrupo4+
+               totalrjGrupo5+
+               totalrjGrupo6) / 6)
+
+print(SaoPaulo)
+print(RioJaneiro)
