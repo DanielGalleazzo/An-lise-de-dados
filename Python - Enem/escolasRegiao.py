@@ -44,4 +44,3 @@ print('Nordeste: ' + str(escolasNordeste))
 print('Centro-Oeste:' + str(escolasCentroOeste))
 print('Sul: ' + str(escolasSul))
 
-#Para o daniel do futuro: fazer um código que mostre os estados que tiveram a média maior ou igual a 630 (somar as 5 materias lp,mt,cn,ch,rd e dividir por cinco)
