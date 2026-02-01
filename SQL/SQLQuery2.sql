@@ -64,16 +64,48 @@
 --order by  grammy_wins desc
 
 --Mostre os 3 gêneros com maior média de ouvintes.
+--select top 3  main_genre, avg(monthly_listeners) as monthly_listeners
+--from artists_stage
+--group by main_genre
+--order by monthly_listeners desc
+
+
 --Liste as gravadoras ordenadas pela soma total de ouvintes.
+--select record_label, sum(monthly_listeners) as monthly_listeners
+--from artists_stage 
+--group by record_label
+--order by monthly_listeners asc
+
 --Liste artistas brasileiros de Pop ou MPB com mais de 1 milhão de ouvintes.
+--select artist_name, country, main_genre,monthly_listeners
+--from artists_stage
+--where country = 'Brasil' and 
+--(main_genre = 'Pop'
+--or main_genre = 'MPB') and monthly_listeners > 1000000
+
 --Liste artistas ativos com mais de 5 álbuns e pelo menos 1 Grammy.
+--select artist_name, albums_released, grammy_wins
+--from artists_stage
+--where albums_released > 5 and grammy_wins >= 1 and is_active = 'True' 
+
 --Liste artistas que nunca ganharam Grammy.
+--select artist_name, albums_released, grammy_wins
+--from artists_stage
+--where grammy_wins = 0
+
 --Liste artistas ativos, com menos de 5 anos de carreira e mais de 500 mil ouvintes.
+--select *
+--from artists_stage
+--where debut_year > '2020' and is_active = 'True' and monthly_listeners > 500000 
+
 --Mostre quais gêneros têm mais artistas que estrearam depois de 2020.
---Calcule a “qualidade” de cada país: total de ouvintes ÷ total de artistas
+--select main_genre, sum(monthly_listeners) as monthly_listeners
+--from artists_stage
+--where debut_year > '2020'
+--group by main_genre
+
+--Calcule a ?qualidade? de cada país: total de ouvintes ÷ total de artistas
 --Para cada gênero, mostre: total de artistas, total de ouvintes, média de ouvintes e ranking por audiência.
 --Mostre o top 3 artistas mais ouvidos de cada país.
 --Para cada gravadora, mostre o artista mais popular.
 --Classifique os artistas em: Superstar, Estrela ou Revelação com base nos ouvintes.
-
-
