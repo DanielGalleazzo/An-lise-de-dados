@@ -1,4 +1,4 @@
--- Liste os 10 primeiros registros da tabela artists.
+ï»¿-- Liste os 10 primeiros registros da tabela artists.
 
 --select top 10 *
 --from artists_stage
@@ -10,12 +10,12 @@
 --where country = 'Brasil'
 
 
---Mostre nome, país e gênero apenas dos artistas ativos (is_active = 1).
+--Mostre nome, paÃ­s e gÃªnero apenas dos artistas ativos (is_active = 1).
 	--select artist_name, country, main_genre
 	--from artists_stage
 	--where is_active = 'True'
 	
---Liste os artistas com mais de 10 milhões de ouvintes mensais.
+--Liste os artistas com mais de 10 milhÃµes de ouvintes mensais.
 
  --select *
  --from artists_stage
@@ -28,18 +28,18 @@
 --where debut_year > 2015
 --order by debut_year
 
---Mostre a quantidade de artistas por país.
+--Mostre a quantidade de artistas por paÃ­s.
 --select country,count(country)
 --from artists_stage
 --group by country
 
---Calcule a média de ouvintes mensais por gênero musical.
+--Calcule a mÃ©dia de ouvintes mensais por gÃªnero musical.
 --select main_genre,AVG(monthly_listeners) AS avg_listeners
 --from artists_stage
 --group by main_genre
 
 
---Mostre o total de álbuns lançados por gravadora.
+--Mostre o total de Ã¡lbuns lanÃ§ados por gravadora.
 --select record_label, count(record_label) as total
 --from artists_stage
 --group by record_label
@@ -49,7 +49,7 @@
 --from artists_stage
 --where is_active = 'True'
 --group by country
---Descubra qual país tem mais artistas ativos.
+--Descubra qual paÃ­s tem mais artistas ativos.
 --select country, COUNT(artist_name) as name
 --from artists_stage
 --where is_active = 'True'
@@ -63,7 +63,7 @@
 --from artists_stage
 --order by  grammy_wins desc
 
---Mostre os 3 gêneros com maior média de ouvintes.
+--Mostre os 3 gÃªneros com maior mÃ©dia de ouvintes.
 --select top 3  main_genre, avg(monthly_listeners) as monthly_listeners
 --from artists_stage
 --group by main_genre
@@ -76,14 +76,14 @@
 --group by record_label
 --order by monthly_listeners asc
 
---Liste artistas brasileiros de Pop ou MPB com mais de 1 milhão de ouvintes.
+--Liste artistas brasileiros de Pop ou MPB com mais de 1 milhÃ£o de ouvintes.
 --select artist_name, country, main_genre,monthly_listeners
 --from artists_stage
 --where country = 'Brasil' and 
 --(main_genre = 'Pop'
 --or main_genre = 'MPB') and monthly_listeners > 1000000
 
---Liste artistas ativos com mais de 5 álbuns e pelo menos 1 Grammy.
+--Liste artistas ativos com mais de 5 Ã¡lbuns e pelo menos 1 Grammy.
 --select artist_name, albums_released, grammy_wins
 --from artists_stage
 --where albums_released > 5 and grammy_wins >= 1 and is_active = 'True' 
@@ -98,14 +98,14 @@
 --from artists_stage
 --where debut_year > '2020' and is_active = 'True' and monthly_listeners > 500000 
 
---Mostre quais gêneros têm mais artistas que estrearam depois de 2020.
+--Mostre quais gÃªneros tÃªm mais artistas que estrearam depois de 2020.
 --select main_genre, sum(monthly_listeners) as monthly_listeners
 --from artists_stage
 --where debut_year > '2020'
 --group by main_genre
 
---Calcule a ?qualidade? de cada país: total de ouvintes ÷ total de artistas
---Para cada gênero, mostre: total de artistas, total de ouvintes, média de ouvintes e ranking por audiência.
---Mostre o top 3 artistas mais ouvidos de cada país.
+--Calcule a Â“qualidadeÂ” de cada paÃ­s: total de ouvintes Ã· total de artistas
+--Para cada gÃªnero, mostre: total de artistas, total de ouvintes, mÃ©dia de ouvintes e ranking por audiÃªncia.
+--Mostre o top 3 artistas mais ouvidos de cada paÃ­s.
 --Para cada gravadora, mostre o artista mais popular.
---Classifique os artistas em: Superstar, Estrela ou Revelação com base nos ouvintes.
+--Classifique os artistas em: Superstar, Estrela ou RevelaÃ§Ã£o com base nos ouvintes.
