@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
-
-url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart"
+moeda = "bitcoin"
+url = "https://api.coingecko.com/api/v3/coins/"+moeda+"/market_chart"
 
 params = {
     "vs_currency": "usd",
@@ -21,8 +21,8 @@ df_month = df["price"].resample("M").last()
 print(df_month)
 
 
-plt.title("Bitocoin 2025-2026")
+plt.title(moeda+" 2025-2026")
 plt.xlabel("Mês")
 plt.ylabel("Valor em USD")
-plt.bar(df_month.index, df_month.values)
+plt.stem(df_month.index, df_month.values)
 plt.show()
