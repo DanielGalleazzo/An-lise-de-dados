@@ -7,8 +7,8 @@ moeda = "bitcoin"
 url = "https://api.coingecko.com/api/v3/coins/"+moeda+"/market_chart"
 
 params = {
-    "vs_currency": "usd",
-    "days": "365"
+    "vs_currency": "brl",
+    "days": "150 "
 }
 
 response = requests.get(url, params=params)
@@ -18,6 +18,8 @@ df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
 df = df.set_index("date")
 
 df_month = df["price"].resample("M").last()
+
+
 print(df_month)
 
 
