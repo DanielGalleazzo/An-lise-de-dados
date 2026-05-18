@@ -3,26 +3,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
  
 dados = pd.read_csv(
-    'Cotacao Cripto/Dolar x Real - USD_BRL Dados Históricos.csv',
+    'Cotacao Cripto/NovoArquivoConvertidoTeste2.csv',
     sep=',',
     encoding='latin1',
     low_memory=False
 )
+print(dados.head)
 
 
 
-dados['Data'] = pd.to_datetime(
-    dados['Data'],
-    format = '%d/%m/%Y'
-)
 
-dados['Data'] = dados ['Data'].dt.strftime('%m/%d/%Y')
+df = pd.DataFrame(dados)
+df['Data'] = pd.to_datetime(df['Data'])
+df_mensal = df.groupby(df['Data'].dt.to_period('M'))['Maxima'].mean().reset_index()
+print(df_mensal)
 
-dados.to_csv('NovoArquivoConvertidoTeste2.csv',index=False)
- 
-
-#df = pd.DataFrame(dados)
-#df['Data'] = pd.to_datetime(df['Data'])
-#df_mensal = df.groupby(df['Data'].dt.to_period('M'))
-
-#print(df_mensal)
