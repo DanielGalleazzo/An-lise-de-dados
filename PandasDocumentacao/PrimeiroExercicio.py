@@ -185,5 +185,24 @@ dados = pd.DataFrame (
 
 #Criação de coluna
 
-#dados['faturamento'] = dados['Preco'] * dados['Quantidade']
+dados['faturamento'] = dados['Preco'] * dados['Quantidade']
 #print(dados)
+
+#Filtro
+#filtro3000 =  dados[dados["faturamento"] > 3000]
+#print(filtro3000)
+
+#filtroHeadset = dados[dados["Produto"] == "Headset"]
+#print(filtroHeadset)
+
+#Sort = dados.sort_values(by = 'faturamento', ascending= False)
+#print(Sort)
+
+#Loc = dados.loc[dados["faturamento"].idxmax(), ['Produto','Vendedor','faturamento']]
+#print(Loc)
+
+#iloc = dados.iloc[0:3,0:3]
+#print(iloc)
+
+
+
