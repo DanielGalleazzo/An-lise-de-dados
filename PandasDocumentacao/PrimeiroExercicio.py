@@ -206,3 +206,20 @@ dados['faturamento'] = dados['Preco'] * dados['Quantidade']
 
 
 
+#estatistica
+
+#preço médio dos produtos;
+#maior faturamento de uma venda;
+#menor faturamento de uma venda.
+
+#faturamentoTotal = dados['faturamento'].sum() 
+#quantidadeProdutos = dados['Quantidade'].sum()
+#precoMedio = dados['Preco'].mean()
+#maiorValor = dados['faturamento'].max()
+#menorValor = dados['faturamento'].min()
+#print(dados)
+#print("Faturamento total: " , faturamentoTotal)
+#print("Quantidade vendida:" , quantidadeProdutos)
+#print("Preco médio" , precoMedio)
+#print("Maior faturamento" , maiorValor)
+#print("Menor faturamento" , menorValor)
