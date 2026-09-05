@@ -72,18 +72,3 @@ Novamente pedi para o GPT me passar um problema e eu quebrar a cabeça com ele, 
 entender a biblioteca e afins, acredito que com o conhecimento daquela documentação eu já consiga ter uma boa base de código em PY
 
 """
-
-
-import pandas as pd
-import matplotlib as mt
-import numpy as np
-
-df = pd.read_csv(
-    'operations_performance_analytics.csv',
-    sep = ',',
-   encoding= 'latin1',
-    low_memory= False
-)
-
-
-print(df.head())

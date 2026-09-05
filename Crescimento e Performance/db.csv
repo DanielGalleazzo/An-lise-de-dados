@@ -1,4 +1,4 @@
-﻿Data,Cidade,Operacao,Pedidos,Horas_Operacionais,Receita,Pedidos_Cancelados,Taxa_Cancelamento_Pct,Meta_Pedidos,Pedidos_Por_Hora,Receita_Por_Hora,Atingimento_Meta_Pct
+﻿Dia,Cidade,Operacao,Pedidos,Horas_Operacionais,Receita,Pedidos_Cancelados,Taxa_Cancelamento_Pct,Meta_Pedidos,Pedidos_Por_Hora,Receita_Por_Hora,Atingimento_Meta_Pct
 2025-01-01,São Paulo,Operação A,18653,121.4,831751.34,880,4.72,18227,153.65,6851.33,102.34
 2025-01-01,São Paulo,Operação B,15398,100.9,743982.88,633,4.11,15149,152.61,7373.47,101.64
 2025-01-01,São Paulo,Operação C,14002,86.9,562128.9,437,3.13,13055,161.13,6468.69,107.25
