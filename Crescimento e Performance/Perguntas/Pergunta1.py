@@ -38,3 +38,9 @@ plt.plot(eixoX,PedidosAnoPlan['Meta_Pedidos'],marker = 's')
 
 plt.show()
 
+
+
+"""
+conclusão pergunta 1: sim, a operação atingiu a meta do ano de 2025, a maior parte dos pedidos do ano estâo concentrados de janeiro-julho, de agosto para frente mostraram uma
+queda porém ainda acima do planejado, em dezembro mostra um indicio de recuperação com o começo do ano. Curiosos é que o planejado em todos os meses cerca de 200k abaixo do actual 
+"""
