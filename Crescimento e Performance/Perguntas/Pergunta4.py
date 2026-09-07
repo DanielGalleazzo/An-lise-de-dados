@@ -7,6 +7,7 @@ Qual cidade/operação consegue gerar mais pedidos utilizando menos horas?
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 df = pd.read_csv(
     "db.csv",
@@ -21,19 +22,33 @@ df['mes'] = df['Dia'].dt.to_period('M')
 HorasOperacionaisM = df.groupby('mes')['Horas_Operacionais'].sum().reset_index()
 PedidosM = df.groupby('mes')['Pedidos_Por_Hora'].sum().reset_index()
 
-print(HorasOperacionaisM)
-print(PedidosM)
+#print(HorasOperacionaisM)
+#print(PedidosM)
 
-eixoX = HorasOperacionaisM['mes'].astype(str)
+#eixoX = HorasOperacionaisM['mes'].astype(str)
 
-fig, ax1 = plt.subplots()
-ax2 = ax1.twinx()
+#fig, ax1 = plt.subplots()
+#ax2 = ax1.twinx()
 
-ax1.plot(eixoX,HorasOperacionaisM['Horas_Operacionais'],color = 'green', label = "Horas Operacionais")
-ax2.plot(eixoX,PedidosM['Pedidos_Por_Hora'],color = 'blue', label = "Pedidos")
-ax2.set_ylabel("Pedidos")
-ax1.set_ylabel("Horas")
-plt.show()
+#ax1.plot(eixoX,HorasOperacionaisM['Horas_Operacionais'],color = 'green', label = "Horas Operacionais")
+#ax2.plot(eixoX,PedidosM['Pedidos_Por_Hora'],color = 'blue', label = "Pedidos")
+#ax2.set_ylabel("Pedidos")
+#ax1.set_ylabel("Horas")
+#plt.show()
+
+
+PedidosCidadesM = df.groupby(['mes','Cidade'])['Pedidos'].sum().reset_index()
+PedidosCidadesM['mes'] = PedidosCidadesM['mes'].astype(str)
+
+print(PedidosCidadesM)
+
+
+
+sns.lineplot(data=PedidosCidadesM, x='mes', y='Pedidos', hue='Cidade', marker='o') #beeem mais fácil usar seaborn, ainda mais que eu tenho mais familiariedade
+plt.show() 
+
+
+
 
 
 
