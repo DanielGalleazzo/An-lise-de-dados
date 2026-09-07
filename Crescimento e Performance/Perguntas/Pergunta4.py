@@ -42,10 +42,28 @@ PedidosCidadesM['mes'] = PedidosCidadesM['mes'].astype(str)
 
 print(PedidosCidadesM)
 
+PedidosCidadesScatter = df.groupby('Operacao')['Pedidos'].sum().reset_index()
+PedidosCidadesScatter2 = df.groupby('Operacao')['Horas_Operacionais'].mean().reset_index()
 
+Scatter = PedidosCidadesScatter.merge(PedidosCidadesScatter2, on='Operacao')
 
-sns.lineplot(data=PedidosCidadesM, x='mes', y='Pedidos', hue='Cidade', marker='o') #beeem mais fácil usar seaborn, ainda mais que eu tenho mais familiariedade
+plt.scatter (
+    Scatter['Pedidos'],
+    Scatter['Horas_Operacionais']
+)
+
+for x, y, cidade in zip(
+    Scatter["Pedidos"],
+    Scatter["Horas_Operacionais"],
+    Scatter["Operacao"]
+):
+
+    plt.text(x, y, cidade)
+    plt.ylabel("Pedidos")
+    plt.xlabel("Horas")
 plt.show() 
+
+
 
 
 
@@ -64,5 +82,11 @@ Apresenta uma curva normal de acordo com a empresa, quanto mais horas operaciona
 temos uma queda muito grande em relação ao H1
 
 Qual cidade/operação consegue gerar mais pedidos utilizando menos horas?
+
+Cidade: Curitiba, que com -0.3 pontos atrás do RJ produziu uma diferença de apenas 15 pedidos
+Produto: Não está claro, cada um produziu a quantidade correspondente as horas
+
+
+
 
 """
