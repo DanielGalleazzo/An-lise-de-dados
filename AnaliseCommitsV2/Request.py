@@ -18,7 +18,8 @@ params = {
     "author": usuario,
     "since": "2025-11-28T00:00:00Z",
     "until": "2026-10-17T23:59:59Z",
-    "per_page": 100
+    "per_page": 100,
+    "page": 1
 }
 
 response = requests.get(url, headers=headers, params=params)
@@ -29,10 +30,15 @@ if response.status_code == 200:
     quantidade = 0 
 
     for commit in commits:
-       
-        print(commit["commit"]["message"]) #realmente, fazer essa chamada foi bem mais simples que em C
+
+        data = commit["commit"]["author"]["date"] 
+        mensagem = commit["commit"]["message"] #realmente, fazer essa chamada foi bem mais simples que em C
+        print(data, "-", mensagem)
         quantidade += 1
 
+
+
+    params["page"] += 1
     print("Quantidade de commits:" , quantidade)
         
 
